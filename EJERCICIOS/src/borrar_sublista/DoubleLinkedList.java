@@ -82,10 +82,15 @@ public class DoubleLinkedList<T>
         }
         if(actual==first)
         {
-            anterior=anterior.prev;
-            esp=true;
+            if(subLista.size()==size())
+            {
+                first=null;
+            }
+            else {
+                anterior = anterior.prev;
+                esp = true;
+            }
         }
-
         for(int i=0;i<subLista.size();i++)
         {
             actual=actual.next;
