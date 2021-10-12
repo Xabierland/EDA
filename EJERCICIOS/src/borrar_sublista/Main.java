@@ -1,6 +1,6 @@
 package borrar_sublista;
 
-public class main
+public class Main
 {
     public static void main(String[] args)
     {
@@ -48,6 +48,19 @@ public class main
 
         System.out.println("\n===BORRAR TODOS===");//BORRAR EL ULTIMO
         l1.anadirNodo("ana");l1.anadirNodo("jon");l1.anadirNodo("amaia");l1.anadirNodo("luis");l1.anadirNodo("ander");
+        l2.anadirNodo("ana");l2.anadirNodo("jon");l2.anadirNodo("amaia");l2.anadirNodo("luis");l2.anadirNodo("ander");
+
+        System.out.println("Lista 1");l1.imprimirNodo();
+        System.out.println("Lista 2");l2.imprimirNodo();
+
+        l2.borrarLista(l1);
+
+        System.out.println("Resultado");l2.imprimirNodo();
+
+        l1.reset();l2.reset();
+
+        System.out.println("\n===NO BORRAR===");//BORRAR EL ULTIMO
+        l1.anadirNodo("xabier");
         l2.anadirNodo("ana");l2.anadirNodo("jon");l2.anadirNodo("amaia");l2.anadirNodo("luis");l2.anadirNodo("ander");
 
         System.out.println("Lista 1");l1.imprimirNodo();
