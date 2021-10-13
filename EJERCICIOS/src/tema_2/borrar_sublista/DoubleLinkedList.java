@@ -1,4 +1,4 @@
-package borrar_sublista;
+package tema_2.borrar_sublista;
 
 public class DoubleLinkedList<T>
 {
@@ -75,30 +75,32 @@ public class DoubleLinkedList<T>
         DoubleNode<T> actual=first;
         DoubleNode<T> anterior=first;
         boolean esp=false;
-        while(actual.data!=subLista.first.data && anterior!=first.prev)
-        {
-            anterior=actual;
-            actual=actual.next;
-        }
-        if(anterior!=first.prev) {
-            if (actual == first) {
-                if (subLista.size() == size()) {
-                    first = null;
-                } else {
-                    anterior = anterior.prev;
-                    esp = true;
-                }
-            }
-            for (int i = 0; i < subLista.size(); i++) {
+
+        if(subLista.first!=null) {
+            while (!actual.data.equals(subLista.first.data) && !anterior.equals(first.prev)) {
+                anterior = actual;
                 actual = actual.next;
-                if (actual == first) {
-                    esp = true;
-                }
             }
-            actual.prev = anterior;
-            anterior.next = actual;
-            if (esp) {
-                first = actual;
+            if (!anterior.equals(first.prev)) {
+                if (actual.equals(first)) {
+                    if (subLista.size() == size()) {
+                        first = null;
+                    } else {
+                        anterior = anterior.prev;
+                        esp = true;
+                    }
+                }
+                for (int i = 0; i < subLista.size(); i++) {
+                    actual = actual.next;
+                    if (actual == first) {
+                        esp = true;
+                    }
+                }
+                actual.prev = anterior;
+                anterior.next = actual;
+                if (esp) {
+                    first = actual;
+                }
             }
         }
     }
