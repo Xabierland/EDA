@@ -28,10 +28,10 @@ public class DoubleCircularLinkedList
         }
         else
         {
-            DoubleNode<String> actual=first.next;
-            while (actual.equals(first))
+            DoubleNode<String> actual=first;
+            while (!actual.equals(first.prev))
             {
-                System.out.println(actual.data+", ");
+                System.out.print(actual.data+", ");
                 actual=actual.next;
             }
             System.out.println(actual.data+".");
@@ -65,7 +65,32 @@ public class DoubleCircularLinkedList
         }
         else
         {
-
+            int i=0,j=0; //i para s1; j para s2
+            while(i!=s1.length || j!=s2.length)
+            {
+                if(i!=s1.length && j!=s2.length)
+                {
+                    if (s1[i].charAt(0) < s2[j].charAt(0))
+                    {
+                        addNode(s1[i]);
+                        i++;
+                    } else
+                    {
+                        addNode(s2[j]);
+                        j++;
+                    }
+                }
+                if(i==s1.length)
+                {
+                    addNode(s2[j]);
+                    j++;
+                }
+                else if(i==s2.length)
+                {
+                    addNode(s1[i]);
+                    i++;
+                }
+            }
         }
     }
 }
