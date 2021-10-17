@@ -1,4 +1,4 @@
-package tema_2.borrar_sublista;
+package borrar_sublista;
 
 
 public class DoubleNode<T>

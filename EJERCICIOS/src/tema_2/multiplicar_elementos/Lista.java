@@ -1,4 +1,4 @@
-package tema_2.multiplicar_elementos;
+package multiplicar_elementos;
 
 public class Lista<T>
 {

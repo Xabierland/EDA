@@ -1,4 +1,4 @@
-package tema_2.anadir_despues;
+package anadir_despues;
 
 public class DoubleLinkedList<T>
 {
