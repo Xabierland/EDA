@@ -1,4 +1,4 @@
-package borrar_sublista;
+package tema_2.borrar_sublista;
 
 public class DoubleLinkedList<T>
 {

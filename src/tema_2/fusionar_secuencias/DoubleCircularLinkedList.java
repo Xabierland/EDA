@@ -1,4 +1,4 @@
-package fusionar_secuencias;
+package tema_2.fusionar_secuencias;
 
 public class DoubleCircularLinkedList
 {
@@ -16,6 +16,7 @@ public class DoubleCircularLinkedList
         {
             first.prev.next=new DoubleNode<>(elem);
             first.prev.next.next=first;
+            first.prev.next.prev=first.prev;
             first.prev=first.prev.next;
         }
     }
@@ -70,7 +71,7 @@ public class DoubleCircularLinkedList
             {
                 if(i!=s1.length && j!=s2.length)
                 {
-                    if (s1[i].charAt(0) < s2[j].charAt(0))
+                    if (s1[i].compareTo(s2[j])<0)
                     {
                         addNode(s1[i]);
                         i++;

@@ -1,4 +1,4 @@
-package laberinto;
+package tema_2.laberinto;
 
 import java.util.Stack;
 
@@ -53,6 +53,6 @@ public class Laberinto
 
     private boolean dentro(Casilla nueva)
     {
-        if(nueva.x<)
+        return true;
     }
 }

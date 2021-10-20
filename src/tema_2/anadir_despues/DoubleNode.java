@@ -1,4 +1,4 @@
-package anadir_despues;
+package tema_2.anadir_despues;
 
 public class DoubleNode<T>
 {

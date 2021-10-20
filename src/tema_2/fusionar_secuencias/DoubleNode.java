@@ -1,4 +1,4 @@
-package fusionar_secuencias;
+package tema_2.fusionar_secuencias;
 
 public class DoubleNode<T>
 {

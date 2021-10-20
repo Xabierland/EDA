@@ -1,4 +1,4 @@
-package laberinto;
+package tema_2.laberinto;
 
 import java.util.Objects;
 

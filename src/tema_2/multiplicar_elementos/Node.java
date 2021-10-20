@@ -1,4 +1,4 @@
-package multiplicar_elementos;
+package tema_2.multiplicar_elementos;
 
 public class Node<T>{
     T data;

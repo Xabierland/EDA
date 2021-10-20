@@ -1,4 +1,4 @@
-package robot;
+package tema_2.robot;
 
 public class Node
 {
