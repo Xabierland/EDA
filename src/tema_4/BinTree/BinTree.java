@@ -36,5 +36,4 @@ public class BinTree {
         return find(elem)!=null;
     }
 }
-*
- */
+*/
