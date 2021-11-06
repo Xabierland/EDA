@@ -1,5 +1,6 @@
 package tema_4.BinTree;
 
+/*
 public class BinTree {
     BTN<T> root;
     int count;
@@ -35,3 +36,5 @@ public class BinTree {
         return find(elem)!=null;
     }
 }
+*
+ */
