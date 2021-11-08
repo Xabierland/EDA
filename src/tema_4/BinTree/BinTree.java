@@ -1,7 +1,6 @@
 package tema_4.BinTree;
 
-/*
-public class BinTree {
+public class BinTree<T> {
     BTN<T> root;
     int count;
 
@@ -15,19 +14,46 @@ public class BinTree {
         return find(elem, root);
     }
 
-    private T find(T elem, BTN<T> a)
+    private T find(T elem, BTN<T> a) //Coste lineal O(n)
     {
-        if(isEmpty())
+        if(a==null)
         {
             return null;
         }
-        else if(root(a)==elem)
+        else if(a.content.equals(elem))
         {
-            return root(a);
+            return a.content;
         }
         else
         {
-            
+            T result=find(elem,a.left);
+            if (result!=null)
+            {
+                return result;
+            }
+            else
+            {
+                return find(elem,a.right);
+            }
+        }
+    }
+
+    public void removeLeftSubTree()
+    {
+        //pre: arbol no vacio
+        count=count-nNodos(root.left);
+        root.left=null;
+    }
+
+    private int nNodos(BTN<T> a) //Coste lineal O(n)
+    {
+        if(a==null)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1+nNodos(a.left)+nNodos(a.right);
         }
     }
 
@@ -36,4 +62,3 @@ public class BinTree {
         return find(elem)!=null;
     }
 }
-*/
