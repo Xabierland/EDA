@@ -1,1 +1,0 @@
-Ejercicio pagina 126 apuntes

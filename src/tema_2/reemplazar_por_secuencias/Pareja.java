@@ -4,4 +4,10 @@ public class Pareja
 {
     String target;
     String[] replacement;
+
+    public Pareja(String t, String[] r)
+    {
+        target=t;
+        replacement=r;
+    }
 }
