@@ -26,11 +26,11 @@ public class BinSearchTree<T> extends  BinTree<T>
             Comparable<T> comp=(Comparable<T>) elem;
             if (comp.compareTo(a.content)>0)
             {
-                return find(elem, a.right);
+                return findRecursively(elem, a.right);
             }
             else
             {
-                return find(elem, a.left);
+                return findRecursively(elem, a.left);
             }
         }
     }
