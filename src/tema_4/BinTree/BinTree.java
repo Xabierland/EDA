@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinTree<T> {
-    BTN<T> root;
-    int count;
+    protected BTN<T> root;
+    protected int count;
 
     public boolean isEmpty()
     {
@@ -104,9 +104,26 @@ public class BinTree<T> {
     public Iterator<T> iteratorByLevels()
     {
         Queue<BTN<T>> porExaminar= new LinkedList<>();
+        ArrayList<T> lista=new ArrayList<>();
         if(root!=null)
         {
-
+            porExaminar.add(root);
+            while(!porExaminar.isEmpty())
+            {
+                BTN<T> act=porExaminar.remove();
+                if(act.left!=null)
+                {
+                    porExaminar.add(act.left);
+                }
+                if(act.right!=null)
+                {
+                    porExaminar.add(act.right);
+                }
+                lista.add(act.content);
+            }
         }
+        return lista.iterator();
     }
+
+
 }
