@@ -2,6 +2,8 @@ package tema_4.BinTree;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinTree<T> {
     BTN<T> root;
@@ -96,6 +98,15 @@ public class BinTree<T> {
             iteratorInOrden(a.left,l);
             l.add(a.content);
             iteratorInOrden(a.right,l);
+        }
+    }
+
+    public Iterator<T> iteratorByLevels()
+    {
+        Queue<BTN<T>> porExaminar= new LinkedList<>();
+        if(root!=null)
+        {
+
         }
     }
 }
