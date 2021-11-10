@@ -1,5 +1,8 @@
 package tema_4.BinTree;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class BinTree<T> {
     BTN<T> root;
     int count;
@@ -60,5 +63,39 @@ public class BinTree<T> {
     public boolean contains(T elem)
     {
         return find(elem)!=null;
+    }
+
+    public void printInOrden()
+    {
+        printInOrden(root);
+    }
+
+    private void printInOrden(BTN<T> a)
+    {
+        if(a==null) {}
+        else
+        {
+            printInOrden(a.left);
+            System.out.println(a.content);
+            printInOrden(a.right);
+        }
+    }
+
+    public Iterator<T> iteratorInOrden()
+    {
+        ArrayList<T> lista=new ArrayList<>();
+        iteratorInOrden(root, lista);
+        return lista.iterator();
+    }
+
+    private void iteratorInOrden(BTN<T> a, ArrayList<T> l)
+    {
+        if(a==null){}
+        else
+        {
+            iteratorInOrden(a.left,l);
+            l.add(a.content);
+            iteratorInOrden(a.right,l);
+        }
     }
 }
