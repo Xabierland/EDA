@@ -231,6 +231,7 @@ public class BinSearchTree<T> extends BinTree<T>
                 act=act.right;
             }
         }
+        return null;
     }
 
 

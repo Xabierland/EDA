@@ -6,13 +6,8 @@ public class Baraja
 {
     private Carta[] cartas;
 
-    public Baraja()
-    {
-
-    }
-
     public Iterator<Carta> iterador()
     {
-
+        return iterador();
     }
 }
