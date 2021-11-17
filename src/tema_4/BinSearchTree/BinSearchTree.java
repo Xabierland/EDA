@@ -1,6 +1,11 @@
-package tema_4.BinTree;
+package tema_4.BinSearchTree;
 
-public class BinSearchTree<T> extends  BinTree<T>
+import tema_4.BinTree.BTN;
+import tema_4.BinTree.BinTree;
+
+import java.util.ArrayList;
+
+public class BinSearchTree<T> extends BinTree<T>
 {
     public BinSearchTree(){
         super();
@@ -201,4 +206,32 @@ public class BinSearchTree<T> extends  BinTree<T>
         ant.right=act.left;
         return act.content;
     }
+
+    public T removeElement(T elem) //Terminar con apuntes
+    {
+        Comparable<T> comp=(Comparable<T>) elem;
+        BTN<T> act=root;
+        BTN<T> ant=root;
+        boolean enc=false;
+
+        while(act!=null && !enc)
+        {
+            if(comp.compareTo(act.content)==0)
+            {
+                enc=true;
+            }
+            else if(comp.compareTo(act.content)<0)
+            {
+                ant=act;
+                act=act.left;
+            }
+            else
+            {
+                ant=act;
+                act=act.right;
+            }
+        }
+    }
+
+
 }

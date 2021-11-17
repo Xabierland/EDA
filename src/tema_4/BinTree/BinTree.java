@@ -125,5 +125,24 @@ public class BinTree<T> {
         return lista.iterator();
     }
 
+    public ArrayList<T> listaHojas()
+    {
+        ArrayList<T> l=new ArrayList<>();
+        listaHojas(root, l);
+        return l;
+    }
 
+    private void listaHojas(BTN<T> a, ArrayList<T> r)
+    {
+        if(a==null){}
+        else if(a.left==null && a.right==null)
+        {
+            r.add(a.content);
+        }
+        else
+        {
+            listaHojas(a.left,r);
+            listaHojas(a.right,r);
+        }
+    }
 }
