@@ -1,5 +1,6 @@
 package tema_2.cartas;
 
+import java.util.Arrays;
 import java.util.Iterator;
 
 public class Baraja
@@ -8,6 +9,6 @@ public class Baraja
 
     public Iterator<Carta> iterador()
     {
-        return iterador();
+        return Arrays.stream(cartas).iterator();
     }
 }
