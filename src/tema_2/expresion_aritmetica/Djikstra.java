@@ -12,7 +12,7 @@ public class Djikstra
         //      Todos los operadores son binarios (de la forma "X OPERADOR Y")
         //Pos:  El resultado es el valor de la expresion
         Stack<Character> Pila_operadores=new Stack<>();
-        Stack<Character> Pila_operando=new Stack<>() ;
+        Stack<Integer> Pila_operando=new Stack<>() ;
 
         for(Character c:exp.toCharArray())
         {
@@ -22,41 +22,37 @@ public class Djikstra
             }
             else if(Character.isDigit(c))
             {
-                Pila_operando.push(c);
+                Pila_operando.push(Character.digit(c,10));
             }
             else if(c==')')
             {
-                char yc = Pila_operando.pop();
-                int y=Character.digit(yc,10);
-                char xc = Pila_operando.pop();
-                int x=Character.digit(xc,10);
+                int y = Pila_operando.pop();
+                int x = Pila_operando.pop();
                 char op = Pila_operadores.pop();
                 if(op=='+') {
                     int res=x+y;
-                    Pila_operando.push(Character.forDigit(res,10));
+                    Pila_operando.push(res);
                 }
                 else if(op=='-')
                 {
                     int res=x-y;
-                    Pila_operando.push(Character.forDigit(res,10));
+                    Pila_operando.push(res);
                 }
                 else if(op=='*')
                 {
                     int res=x*y;
-                    Pila_operando.push(Character.forDigit(res,10));
+                    Pila_operando.push(res);
                 }
                 else if(op=='/')
                 {
                     int res=x/y;
-                    Pila_operando.push(Character.forDigit(res,10));
+                    Pila_operando.push(res);
                 }
             }
         }
         if(Pila_operando.size()==1)
         {
-            char c=Pila_operando.pop();
-            double res=Character.digit(c,10);
-            return res;
+            return Pila_operando.pop();
         }
         else
         {
