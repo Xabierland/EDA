@@ -1,8 +1,5 @@
 package tema_4.arbol_tareas;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 public class ArbolTareas
 {
     BTN root;
