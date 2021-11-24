@@ -4,57 +4,10 @@ public class ArbolTareas
 {
     BTN root;
 
-    public void add(String id, int coste)
-    {
-        if(root==null)
-        {
-            root=new BTN(id, coste);
-        }
-        else
-        {
-            BTN act=root;
-            boolean enc=false;
-            while (!enc)
-            {
-                if(id.compareTo(act.element.id)<0)
-                {
-                    if(act.left==null)
-                    {
-                        act.left=new BTN(id,coste);
-                        enc=true;
-                    }
-                    else
-                    {
-                        act=act.left;
-                    }
-                }
-                else if(id.compareTo(act.element.id)>0)
-                {
-                    if(act.right==null)
-                    {
-                        act.right=new BTN(id,coste);
-                        enc=true;
-                    }
-                    else
-                    {
-                        act=act.right;
-                    }
-                }
-                else
-                {
-                    act.element.coste=coste;
-                    enc=true;
-                }
-            }
-        }
-    }
-
     public int coste(String idTarea)
     {
         BTN tarea=findNode(idTarea, root);
-        int sum=0;
-        suma(tarea,sum);
-        return sum;
+        return suma(tarea);
     }
 
     private BTN findNode(String id, BTN a)
@@ -69,24 +22,24 @@ public class ArbolTareas
         }
         else
         {
-            if(id.compareTo(a.element.id)>0)
+            BTN resDer=findNode(id, a.right);
+            if(resDer!=null)
             {
-                return findNode(id, a.right);
+                return resDer;
             }
             else
             {
-                return findNode(id, a.left);
+                BTN resIzq=findNode(id, a.left);
+                return resIzq;
             }
         }
     }
 
-    private void suma(BTN a, int sum)
+    private int suma(BTN a)
     {
-        if(a==null){}
+        if(a==null){return 0;}
         else{
-            sum+=a.element.coste;
-            suma(a.left, sum);
-            suma(a.right, sum);
+            return a.element.coste+suma(a.left)+suma(a.right);
         }
     }
 }
