@@ -1,4 +1,4 @@
-package tema_4.BinTree;
+package tema_4.arbol_binario;
 
 public class BTN<T> {
     public T content;

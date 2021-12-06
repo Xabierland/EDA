@@ -1,4 +1,4 @@
-package tema_4.B_Tree;
+package tema_4.arbol_n_ario;
 
 public class Arbol
 {

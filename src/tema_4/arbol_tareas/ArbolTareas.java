@@ -29,8 +29,7 @@ public class ArbolTareas
             }
             else
             {
-                BTN resIzq=findNode(id, a.left);
-                return resIzq;
+                return findNode(id, a.left);
             }
         }
     }

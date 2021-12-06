@@ -1,9 +1,7 @@
-package tema_4.BinSearchTree;
+package tema_4.arbol_de_busqueda;
 
-import tema_4.BinTree.BTN;
-import tema_4.BinTree.BinTree;
-
-import java.util.ArrayList;
+import tema_4.arbol_binario.BTN;
+import tema_4.arbol_binario.BinTree;
 
 public class BinSearchTree<T> extends BinTree<T>
 {
