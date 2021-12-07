@@ -1,8 +1,6 @@
 package tema_4.arbol_aritmetico;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 public class ArbolExpresion
 {
@@ -10,7 +8,47 @@ public class ArbolExpresion
 
     public Integer evaluar(HashMap<String, Integer> tHash)
     {
-        return 1;       //SIN TERMINAR
+        Stack<Integer> pila_num=new Stack<>();
+        Iterator<InfoElemExp> itr=iteratorPostOrden();
+        int res=0;
+        InfoElemExp i;
+        while (itr.hasNext())
+        {
+            i=itr.next();
+            if(!i.operador)
+            {
+                pila_num.push(Integer.valueOf(i.elem));
+            }
+            else
+            {
+                if(i.elem.equals("+"))
+                {
+                    int y=pila_num.pop();
+                    int x=pila_num.pop();
+                    res=x+y;
+                    pila_num.push(res);
+                }
+                else if(i.elem.equals("-"))
+                {
+                    int y=pila_num.pop();
+                    int x=pila_num.pop();
+                    res=x-y;
+                    pila_num.push(res);
+                }
+                else
+                {
+                    int y=pila_num.pop();
+                    int x=pila_num.pop();
+                    res=x*y;
+                    pila_num.push(res);
+                }
+            }
+        }
+        if(pila_num.size()==1)
+        {
+            return pila_num.pop();
+        }
+
     }
 
     public Iterator<InfoElemExp> iteratorPostOrden()
