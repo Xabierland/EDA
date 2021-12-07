@@ -48,6 +48,10 @@ public class ArbolExpresion
         {
             return pila_num.pop();
         }
+        else
+        {
+            return 9999;
+        }
 
     }
 
