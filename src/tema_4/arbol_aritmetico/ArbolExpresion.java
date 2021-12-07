@@ -35,7 +35,7 @@ public class ArbolExpresion
                     res=x-y;
                     pila_num.push(res);
                 }
-                else
+                else if(i.elem.equals("*"))
                 {
                     int y=pila_num.pop();
                     int x=pila_num.pop();
