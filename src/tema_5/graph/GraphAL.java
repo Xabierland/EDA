@@ -139,7 +139,27 @@ public class GraphAL<T>
                     examinados[i]=true;
                 }
             }
+        }
+    }
 
+    public void recProfundidad(int comienzo)
+    {
+        Stack<Integer> porEx=new Stack<>();
+        Boolean[] examinados=new Boolean[numVertices];
+
+        porEx.push(comienzo);
+        examinados[comienzo]=true;
+        while(!porEx.isEmpty())
+        {
+            int act=porEx.pop();
+            for(int i:adjList[act])
+            {
+                if(!examinados[i])
+                {
+                    porEx.push(i);
+                    examinados[i]=true;
+                }
+            }
         }
     }
 }

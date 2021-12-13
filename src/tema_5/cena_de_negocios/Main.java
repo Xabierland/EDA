@@ -7,6 +7,11 @@ public class Main {
     protected int numVertices=0;
     protected LinkedList<Integer>[] adjList;
 
+    public void crear_adjList()
+    {
+
+    }
+
     public boolean separar_cena(int comienzo)
     {
         Queue<Integer> porEx=new LinkedList<Integer>();
@@ -38,5 +43,7 @@ public class Main {
         return posible;
     }
 
-
+    public static void main(String[] args)
+    {
+    }
 }
