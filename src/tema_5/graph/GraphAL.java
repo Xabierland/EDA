@@ -120,4 +120,26 @@ public class GraphAL<T>
     {
         return 0;       //FALTARIA POR IMPLEMENTAR
     }
+
+    public void recAnchura(int comienzo)
+    {
+        Queue<Integer> porEx=new LinkedList<Integer>();
+        Boolean[] examinados=new Boolean[numVertices];
+
+        porEx.add(comienzo);
+        examinados[comienzo]=true;
+        while(!porEx.isEmpty())
+        {
+            int act=porEx.remove();
+            for(int i:adjList[act])
+            {
+                if(!examinados[i])
+                {
+                    porEx.add(i);
+                    examinados[i]=true;
+                }
+            }
+
+        }
+    }
 }
