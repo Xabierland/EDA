@@ -1,9 +1,8 @@
 package tema_4.arbol_genealogico;
 
-import tema_4.arbol_juego.Arbol;
-
 import java.util.HashMap;
 
+//ESTE EJERCICIO ESTA BIEN SI TENEMOS EN CUENTA QUE LOS ANTECESORES ESTAN POR ENCIMA EN EL ARBOL
 public class ArbolGenealogico {
     BTN<Persona> root;
 

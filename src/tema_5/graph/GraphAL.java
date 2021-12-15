@@ -162,4 +162,9 @@ public class GraphAL<T>
             }
         }
     }
+
+    public void shortestPath(int comienzo, int destino)
+    {
+
+    }
 }
