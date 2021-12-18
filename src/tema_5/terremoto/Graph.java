@@ -1,8 +1,6 @@
 package tema_5.terremoto;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Graph
 {
@@ -18,16 +16,35 @@ public class Graph
 
     public ArrayList<String> comarcasAfectas(int intensidad, String c)
     {
+        ArrayList<String> afectados=new ArrayList<>();
         Queue<String> porEx=new LinkedList<>();
+        HashMap<String, Integer> intensidades=new HashMap<>();
         boolean[] examinados=new boolean[numVertices];
 
         porEx.add(c);
         examinados[index(c)]=true;
+        intensidades.put(c,intensidad);
 
-        while (!porEx.isEmpty()&&intensidad<1)
+        while (!porEx.isEmpty()&&intensidad>1)
         {
             String act=porEx.remove();
-            
+            for(int i=0;i<numVertices;i++)
+            {
+                if(adjMatrix[index(act)][i]&&!examinados[i])
+                {
+                    porEx.add(vertices[i]);
+                    examinados[i]=true;
+                    intensidades.put(vertices[i],intensidades.get(act)/2);
+                }
+            }
         }
+        for(Map.Entry<String,Integer> entry : intensidades.entrySet())
+        {
+            if(entry.getValue()>1)
+            {
+                afectados.add(entry.getKey());
+            }
+        }
+        return afectados;
     }
 }
