@@ -19,9 +19,6 @@ public class RedDeOrdenadores {
             {false, false, false, false, false, false, false, false, false, false, false}, // 9
             {false, false, false, false, false, false, false, false, false, false, false}  // 10
     };
-
-
-
     /**
      * @return For each i (in the range 0 .. number of nodes in the graph), this method calculates
      * the minimum distance from node 0 to i
@@ -45,15 +42,14 @@ public class RedDeOrdenadores {
             int act=porEx.remove();
             for(int i=0; i< adjMatrix.length;i++)
             {
-                if(adjMatrix[act][i])
+                if(adjMatrix[act][i]&&!examinados[i])
                 {
                     porEx.add(i);
                     examinados[i]=true;
-
-                }
-                if(costes[act]<costes[act]+1)
-                {
-                    costes[i]=costes[act]+1;
+                    if(costes[i]<costes[act]+1)
+                    {
+                        costes[i]=costes[act]+1;
+                    }
                 }
             }
         }
@@ -64,10 +60,8 @@ public class RedDeOrdenadores {
         int[] r = new RedDeOrdenadores().obtenerCostes();
         int j = 0;
         for (Integer a: r){
-            System.out.println(j + ": " + a);
+            System.out.println(j + ":\t" + a);
             j++;
         }
     }
-
-
 }
